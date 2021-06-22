@@ -4,4 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\EmployeeRole\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avanada.SubTCSE.Projeto.Domain\Avanada.SubTCSE.Projeto.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
