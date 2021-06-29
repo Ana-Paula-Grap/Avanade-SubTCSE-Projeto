@@ -1,9 +1,10 @@
 ﻿using Avanada.SubTCSE.Projeto.Apllication.Dtos.EmployeeRole;
+using System.Threading.Tasks;
 
 namespace Avanada.SubTCSE.Projeto.Apllication.Interfaces.EmployeeRole
 {
     public interface IEmployeeRoleAppService
     {
-        void AddEmployeeRole(EmployeRoleDto employeeRoleDto);
+        Task<EmployeRoleDto> AddEmployeeRole(EmployeRoleDto employeeRoleDto);
     }
 }
