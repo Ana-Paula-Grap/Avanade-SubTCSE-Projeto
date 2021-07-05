@@ -1,6 +1,8 @@
-﻿namespace Avanada.SubTCSE.Projeto.Domain.Aggregates.Employee.Interface.Repositories
+﻿using Avanada.SubTCSE.Projeto.Domain.Base.Repository;
+
+namespace Avanada.SubTCSE.Projeto.Domain.Aggregates.Employee.Interface.Repositories
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeRepository : IBaseRepository<Entities.Employee, string>
     {
 
     }
