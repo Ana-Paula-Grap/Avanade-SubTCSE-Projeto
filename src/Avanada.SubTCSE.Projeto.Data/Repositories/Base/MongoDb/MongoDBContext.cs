@@ -12,7 +12,8 @@ namespace Avanada.SubTCSE.Projeto.Data.Repositories.Base.MongoDb
             MongoClientSettings mongoClientSettings = MongoClientSettings
                 .FromUrl(new MongoUrl(""));
 
-            mongoClientSettings.SslSettings = new SslSettings()
+            mongoClientSettings.SslSettings = 
+                new SslSettings()
             {
                 EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12
             };
@@ -20,8 +21,6 @@ namespace Avanada.SubTCSE.Projeto.Data.Repositories.Base.MongoDb
             MongoClient mongoClient = new MongoClient(settings: mongoClientSettings);
 
             _mongoDatabase = mongoClient.GetDatabase("");
-
-
         }
 
         public IMongoCollection<TEntity> GetCollection<TEntity>(string collection)

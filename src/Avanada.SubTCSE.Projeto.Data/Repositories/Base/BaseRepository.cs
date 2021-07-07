@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Avanada.SubTCSE.Projeto.Domain.Aggregates;
+using Avanada.SubTCSE.Projeto.Domain.Base.Repository;
+using MongoDB.Driver;
 using System.Threading.Tasks;
 
 namespace Avanada.SubTCSE.Projeto.Data.Repositories.Base
 {
-    class BaseRepository
+    public abstract class BaseRepository<TEntity, Tid>
+        : IBaseRepository<TEntity, Tid> where TEntity : BaseEntity<Tid>
+
     {
+        private readonly IMongoCollection<TEntity> _collection;
+        public virtual async Task<TEntity> Add(TEntity entity)
+        {
+            await _collection.InsertOneAsync(entity);
+
+            return entity;
+        }
+
+        public async Task<TEntity> FindById(Tid Id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
